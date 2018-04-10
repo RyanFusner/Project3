@@ -2,11 +2,11 @@ package com.fusner.Project3;
 
 import java.util.*;
 
-public class ToDoList<T> implements Iterable<T>
+public class ToDoList<E> implements Iterable<E>
 {
-    private ArrayList<T> values;
+    private ArrayList<E> values;
 
-    public ToDoList(ArrayList<T> values)
+    public ToDoList(ArrayList<E> values)
     {
         this.values = values;
     }
@@ -16,7 +16,7 @@ public class ToDoList<T> implements Iterable<T>
         this.values = new ArrayList<>();
     }
 
-    class ArrayIterator implements Iterator<T>
+    class ArrayIterator implements Iterator<E>
     {
         int current = 0;
 
@@ -32,7 +32,7 @@ public class ToDoList<T> implements Iterable<T>
             }
         }
 
-        public T next()
+        public E next()
         {
             if (!hasNext())
             {
@@ -42,17 +42,17 @@ public class ToDoList<T> implements Iterable<T>
         }
     }
 
-    public T get(int index)
+    public E get(int index)
     {
         return values.get(index);
     }
 
-    public void add(T item)
+    public void add(E item)
     {
         values.add(item);
     }
 
-    public void set(int index, T value)
+    public void set(int index, E value)
     {
         values.set(index, value);
     }
@@ -62,7 +62,7 @@ public class ToDoList<T> implements Iterable<T>
         return values.size();
     }
 
-    public Iterator<T> iterator()
+    public Iterator<E> iterator()
     {
         return new ArrayIterator();
     }
@@ -71,8 +71,6 @@ public class ToDoList<T> implements Iterable<T>
     {
         values.remove(index);
     }
-
-
 
 
 }
